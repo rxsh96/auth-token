@@ -1,3 +1,7 @@
+input {
+  text-align: center;
+}
+
 .form {
   background: radial-gradient(
         circle farthest-side at 0% 50%,
@@ -55,4 +59,8 @@
 
 .my-color {
   background-color: #96ccdf;
+}
+
+.testing {
+  background-color: black;
 }

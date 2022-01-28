@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
+    "initdb": "node initdb.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "rxserrano",
@@ -12,6 +13,7 @@
   "dependencies": {
     "body-parser": "^1.19.1",
     "express": "^4.17.2",
+    "pgtools": "^0.3.2",
     "speakeasy": "^2.0.0"
   },
   "devDependencies": {

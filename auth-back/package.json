@@ -13,6 +13,8 @@
   "dependencies": {
     "body-parser": "^1.19.1",
     "express": "^4.17.2",
+    "knex": "^1.0.1",
+    "pg": "^8.7.1",
     "pgtools": "^0.3.2",
     "speakeasy": "^2.0.0"
   },

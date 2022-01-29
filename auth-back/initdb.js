@@ -25,7 +25,7 @@ pool.query(`CREATE DATABASE ${dbName};`, (err, res) => {
     config["database"] = dbName;
     const newPool = new Pool(config);
     newPool.query(
-      "CREATE TABLE myclients(id SERIAL PRIMARY KEY, username text NOT NULL, token text NOT NULL)",
+      "CREATE TABLE myclients(id SERIAL PRIMARY KEY, username VARCHAR(20) NOT NULL UNIQUE, secret text NOT NULL, token VARCHAR(6) NOT NULL)",
       (err, res) => {
         console.log(`CREATE TABLE ERROR: ${err}`);
         console.log(`CREATE TABLE RES: ${res}`);

@@ -19,7 +19,7 @@ Auth Token Backend utiliza una serie de proyectos de código abierto para funcio
 - [node.js] - Eventos de E/S para el backend
 - [Express] - Framework de red rápido en node.js
 - [speakeasy] - Generación y validación de secrets y tokens
-- [knex] - Consultas a la DB
+- [knex.js] - Consultas a la DB
 
 ## Instalación
 
@@ -37,7 +37,7 @@ Inicializar la base de datos en su ambiente.
 npm run initdb [DBNAME] [DBUSER] [DBPASSWORD]
 ```
 
-Iniciar el servidor
+Iniciar el servidor.
 
 ```sh
 npm start
@@ -50,4 +50,4 @@ MIT
 [node.js]: http://nodejs.org
 [express]: http://expressjs.com
 [speakeasy]: https://github.com/speakeasyjs/speakeasy
-[knex]: https://knexjs.org/
+[knex.js]: https://knexjs.org/

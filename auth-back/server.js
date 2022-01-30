@@ -3,10 +3,14 @@ const express = require("express");
 const speakeasy = require("speakeasy");
 const knex = require("knex");
 const fs = require("fs");
+const cors = require("cors");
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cors());
 
 const reader = fs.readFileSync("config.json");
 const config = JSON.parse(reader);
@@ -17,7 +21,7 @@ const db = knex({
 });
 
 app.get("/", (req, res) => {
-  res.send("This is working");
+  res.send("Server running");
 });
 
 app.post("/generarToken", async (req, res) => {
@@ -50,7 +54,7 @@ app.post("/generarToken", async (req, res) => {
         token: token,
         secret: secret.base32,
       })
-      .then(console.log);
+      .then((res) => res);
   } else {
     token = speakeasy.totp({
       secret: data[0]["secret"],
@@ -62,13 +66,13 @@ app.post("/generarToken", async (req, res) => {
       .update({
         token: token,
       })
-      .then(console.log);
+      .then((res) => res);
   }
 
   res.send({
     cliente: client,
     token: token,
-    remaining: 30 - Math.floor((new Date().getTime() / 1000.0) % 30),
+    remaining: 60 - Math.floor((new Date().getTime() / 1000.0) % 60),
   });
 });
 

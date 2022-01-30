@@ -26,9 +26,10 @@ class App extends Component {
   };
 
   onButtonSubmit = () => {
-    if (this.state.username) {
-      this.setState({ openModal: true });
+    if (!this.state.username) {
+      return;
     }
+    this.setState({ openModal: true });
   };
 
   render() {
@@ -53,11 +54,7 @@ class App extends Component {
                 shouldCloseOnEsc={true}
                 shouldCloseOnOverlayClick={true}
               >
-                <MyModalInfo
-                  user={this.state.username}
-                  token={782147}
-                  time={Date.now() + 5000}
-                />
+                <MyModalInfo user={this.state.username} />
               </Modal>
             ) : null}
           </div>

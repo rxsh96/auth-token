@@ -45,10 +45,6 @@ Iniciar el servidor.
 npm start
 ```
 
-## Licencia
-
-MIT
-
 [node.js]: http://nodejs.org
 [express]: http://expressjs.com
 [speakeasy]: https://github.com/speakeasyjs/speakeasy

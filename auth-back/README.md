@@ -1,14 +1,53 @@
-### Preparando la DB
+# Readme
 
-_Importante:_ Debe tener instalado en su computador Postgres SQL.
+## Auth Token Backend App
 
-Si es la primera vez que va a probar la aplicación, ejecutar los siguientes comandos:
+Auth Token Backend App es un servidor local en Express que genera tokens de seis dígitos con una validez por 60 segundos.
 
-Instalar las dependencias del proyecto  
-`npm install`
+## Features
 
-Crear la base de datos para la aplicación  
-`npm run initdb [DBNAME] [DBUSER] [DBPASSWORD]`
+- Crea una DB en Postgres.
+- SELECT, INSERT y UPDATE de registros (información de clientes) en la DB.
+- A cada cliente le asocia un `secret` con el cual se determinará el `token` a generar.
+- Genera `tokens` de 6 dígitos con una validación inicial de 60 segundos.
+- Expone endpoints para crear tokens y validar tokens.
 
-Luego de esto, puede iniciar el servidor  
-`npm start`
+## Tech
+
+Auth Token Backend utiliza una serie de proyectos de código abierto para funcionar correctamente:
+
+- [node.js] - Eventos de E/S para el backend
+- [Express] - Framework de red rápido en node.js
+- [speakeasy] - Generación y validación de secrets y tokens
+- [knex] - Consultas a la DB
+
+## Instalación
+
+Se requiere [Node.js](https://nodejs.org/) v16+ y [PostgresSQL](https://www.postgresql.org/) v14+.
+
+Instalar las dependencies y devDependencies.
+
+```sh
+npm install
+```
+
+Inicializar la base de datos en su ambiente.
+
+```sh
+npm run initdb [DBNAME] [DBUSER] [DBPASSWORD]
+```
+
+Iniciar el servidor
+
+```sh
+npm start
+```
+
+## Licencia
+
+MIT
+
+[node.js]: http://nodejs.org
+[express]: http://expressjs.com
+[speakeasy]: https://github.com/speakeasyjs/speakeasy
+[knex]: https://knexjs.org/

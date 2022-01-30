@@ -25,6 +25,8 @@ Auth Token Backend utiliza una serie de proyectos de código abierto para funcio
 
 Se requiere [Node.js](https://nodejs.org/) v16+ y [PostgresSQL](https://www.postgresql.org/) v14+.
 
+Ubicarse en el directorio del proyecto `auth-back`.
+
 Instalar las dependencies y devDependencies.
 
 ```sh
